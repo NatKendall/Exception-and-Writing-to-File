@@ -4,25 +4,16 @@ import java.io.*;
 import java.util.*;
 import java.io.FileWriter;
 
-/**
- * My words and actions will reflect Academic Integrity. I will not cheat or lie
- * or steal in academic matters. I will promote integrity in the UNCG community.
- * Student’s Signature (Nat) Michelle Kendall Date 3/20/2022
- *
- * @author Kenda
- */
-// KendallmHW4
-/*
-    (Nat) Michelle Kendall
-     CSC 230, Sec 03
-     3/20/2022
- */
+ // @author Kenda
+
 public class KendallmHW4 {
 
+    //sorting the array
     public static void sortArraysMethod(int a[]) {
         Arrays.sort(a);
     }
 
+    //print the values of array
     public static void printValuesMethod(int k[]) {
         System.out.print("The array in ascending order is: ");
         for (int i = 0; i < k.length; i++) {
@@ -30,6 +21,7 @@ public class KendallmHW4 {
         }
     }
 
+    //calculate the average 
     public static double averageArrayMethod(int a[]) {
         double sum = 0.0, av;
         for (int i = 0; i < a.length; i++) {
@@ -39,6 +31,7 @@ public class KendallmHW4 {
         return av;
     }
 
+    //calculate the standard deviation
     public static double StandDev(int b[]) {
         double av = 26.640, stand = 0.0, rstand;
         int i = 50;
@@ -50,6 +43,7 @@ public class KendallmHW4 {
         return k;
     }
 
+    //printing to file GradesOut the average and standard deviation
     public static void printToFileArray(int ar[]) {
         sortArraysMethod(ar);
         try (FileWriter writer = new FileWriter("GradesOut.txt")) {
@@ -67,15 +61,14 @@ public class KendallmHW4 {
         }
     }
 
+    //exception handling 
     public static void main(String[] args) throws IOException {
         Scanner n = new Scanner(System.in);
         double sum;
         int i = 0;
         int[] ar = new int[50];
-        System.out.println();
-        System.out.println("KendallMHW4\n"
-                + "Michelle Kendall\n"
-                + "CSC 230, Sec 03\n");   
+        
+        //description of what program does
         System.out.println("This program loads to an array a list of 50 grades read from a file.\n"
                 + "Once the scores have been loaded to the array, provide the user with a menu of options:");
         System.out.println("A. Print the Grades to the Screen sorted in ascending order");
@@ -85,6 +78,7 @@ public class KendallmHW4 {
                 + " and standard deviation of the scores");
         System.out.println("E. Quit");
         
+        //try and catch for exception handling
         try {
             Scanner sc = new Scanner(new FileReader("gradesIn.txt"));
             sum = 0;
@@ -94,13 +88,14 @@ public class KendallmHW4 {
                 sum += ar[i];
                 i++;
             }
-            sc.close();
+            sc.close();  //making sure to always close!
         } catch (FileNotFoundException e) {
             System.out.println("not found" + e);
         }
 
         char ch = 'A';
 
+        //do-while loop for menu choice
         do {
             System.out.println();
             System.out.print("******************************************************************\n"
@@ -117,6 +112,8 @@ public class KendallmHW4 {
            
             ch = input.charAt(0);
             ch = Character.toUpperCase(ch);
+            
+            //switch case user for options
             switch (ch) {
                 case 'A':
                     sortArraysMethod(ar);
