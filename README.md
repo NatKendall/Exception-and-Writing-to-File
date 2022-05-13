@@ -5,4 +5,5 @@ The instructions were to create a project that sorts an array and then calculate
 Once those methods were created, I then had to write to a file named Gradesout.txt to show the average and standard deviation
 I also had to print all the above 
 I learned how to use exception handling by throwing an exception and catching errors to then be solved. 
--Recieved a score of 100% from Data Structure Professor 
+
+--Recieved a score of 100% from Data Structure Professor 
